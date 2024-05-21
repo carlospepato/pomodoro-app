@@ -51,11 +51,9 @@ export const Separator = styled.div`
     justify-content: center;
 `;
 
-export const ButtonStart = styled.button`
+export const BaseButtonStart = styled.button`
     width: 100%;
     height: 64px;
-    background: ${props => props.theme["green-500"]};
-    color: ${props => props.theme["gray-100"]};
     border: 0;
     border-radius: 6px;
     font-weight: bold;
@@ -69,6 +67,21 @@ export const ButtonStart = styled.button`
         opacity: 0.7;
         cursor: not-allowed;
     }
+`;
+
+export const ButtonStop = styled(BaseButtonStart)`
+    background: ${props => props.theme["red-500"]};
+    color: ${props => props.theme["gray-100"]};
+
+    &:not(:disabled):hover{
+        background: ${props => props.theme["red-700"]};
+    }
+`;
+
+export const ButtonStart = styled(BaseButtonStart)`
+    background: ${props => props.theme["green-500"]};
+    color: ${props => props.theme["gray-100"]};
+
     &:not(:disabled):hover{
         background: ${props => props.theme["green-700"]};
     }
